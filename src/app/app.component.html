@@ -15,7 +15,7 @@
 
 <div>
   doe een gok: 
-  <input id="gokVeld" type="number" [disabled]="eindeSpel" [value]="gokWaarde" #inputveld>
+  <input id="gokVeld" type="number" [disabled]="eindeSpel"  #inputveld>
   <button [disabled]="eindeSpel" (click)="valideerGok(inputveld.value)" (click)="inputveld.value=''" 
     style="margin-left: 5px">
     Check jouw gok
@@ -25,3 +25,5 @@
 <p>{{feedback}}</p>
 
 <p id="comment"></p>
+
+<!-- [value]="gokWaarde" -->
