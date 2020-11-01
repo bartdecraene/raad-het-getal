@@ -9,17 +9,22 @@
 
 <div>
   <br>
-  <button *ngIf="eindeSpel" (click)="reset()">start nieuw spel</button>
+  <button mat-raised-button color="accent" *ngIf="eindeSpel" (click)="reset()">start nieuw spel</button>
   <br><br>
 </div>
 
 <div>
-  doe een gok: 
-  <input id="gokVeld" type="number" [disabled]="eindeSpel"  #inputveld>
-  <button [disabled]="eindeSpel" (click)="valideerGok(inputveld.value)" (click)="inputveld.value=''" 
-    style="margin-left: 5px">
-    Check jouw gok
-  </button>
+   <mat-form-field appearance="fill">
+      <mat-label>Doe een gok:</mat-label>
+      <input matInput id="gokVeld" type="number" [disabled]="eindeSpel" #inputveld>
+    </mat-form-field>
+
+    <!--<input id="gokVeld" type="number" [disabled]="eindeSpel"  #inputveld>-->
+
+    <button mat-raised-button color="primary" matTooltip="contoleer hier uw gok" [disabled]="eindeSpel" (click)="valideerGok(inputveld.value)" (click)="inputveld.value=''" 
+      style="margin-left: 5px">
+      Check jouw gok
+    </button>
 </div>
 
 <p>{{feedback}}</p>
